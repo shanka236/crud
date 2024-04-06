@@ -1,0 +1,45 @@
+<%- include('header') %>
+<%- include('navbr') %>
+
+    <!-- <pre>
+        <%= JSON.stringify(users,null,2) %>
+    </pre> -->
+  <div class="container">
+    <table class="table  table-dark table-hover mt-4">
+      <thead>
+        <tr>
+          <th class="table-danger">Id</th>
+          <th class="table-danger">FirstName</th>
+          <th class="table-danger">LastName</th>
+          <th class="table-danger"></th>
+        </tr>
+      </thead>
+      <tbody>
+
+      <% users.forEach((u)=>{ %>
+        <tr>
+          <th><%= u.id %></th>
+          <td><%= u.firstname %></td>
+          <td><%= u.lastname %></td>
+          <td>
+            <a class="btn btn-info" href="/update-user/<%= u.id %>" >Edit</a>
+            
+            <a class="btn btn-danger" 
+            href="/delete-user/<%= u.id %>">
+              Delete
+            </a>
+            <button class="btn btn-warning">View</button>
+          </td>
+        </tr>
+
+      <% }) %>
+
+
+       
+      </tbody>
+    </table>
+  </div>
+
+  
+
+<%- include('footer') %>
